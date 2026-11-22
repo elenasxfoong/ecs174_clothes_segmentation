@@ -1,0 +1,5 @@
+# Settings for Elena's two-epoch subset smoke test in Ultralytics 8.4.215.
+epochs: 2
+imgsz: 320
+batch: 4
+fliplr: 0.5
