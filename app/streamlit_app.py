@@ -9,7 +9,7 @@ from ultralytics import YOLO #the YOLO model library
 
 
 #For now this is the regular COCO-pretrained YOLO model
-MODEL_PATH = "yolo26n-seg.pt"
+MODEL_PATH = "models/best.pt"
 
 
 #@st.cache_resource tells Streamlit to load the model only the first time and reuse it after that, so the app stays fast.
@@ -32,7 +32,7 @@ if uploaded_file is not None:
     model = load_model()
 
     #Run the model, It returns a list with one result per image; we gave it one image, so we take results[0].
-    results = model(image, conf=0.25)
+    results = model(image, conf=0.25, imgsz=640)
     result = results[0]
 
     #result.plot() draws the masks, boxes and labels onto the photo for us.
